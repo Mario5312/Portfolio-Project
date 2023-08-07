@@ -1,6 +1,6 @@
 import { Link } from "react-router-dom";
 
-const Projects = () => {
+const Projects = ({ name, description }) => {
   return (
     <div className="Top">
       <h2>No projects yet</h2>
@@ -14,9 +14,9 @@ const Projects = () => {
       </p>
       <div className="MainProjects">
         <div className="project-1">
-          <h3>PlacerHolderTitle</h3>
+          <h3>{name}</h3>
           <h4>Date</h4>
-          <p>Short Description</p>
+          <p>{description}</p>
           {/* Image */}
         </div>
 
