@@ -9,15 +9,6 @@ import { Switch } from "react-router-dom/cjs/react-router-dom.min";
 const root = ReactDOM.createRoot(document.getElementById("root"));
 root.render(
   <React.StrictMode>
-    <Router>
-      <Switch>
-        <Route exact path="/">
-          <App></App>
-        </Route>
-        <Route exact path="/AllProjects">
-          <AllProjects />
-        </Route>
-      </Switch>
-    </Router>
+    <App></App>
   </React.StrictMode>
 );

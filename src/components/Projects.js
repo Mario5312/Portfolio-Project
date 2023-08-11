@@ -1,10 +1,9 @@
-import { Link } from "react-router-dom";
+import ProjectItem from "./ProjectItem";
 
 const Projects = ({ name, description }) => {
   return (
     <div className="Top">
-      <h2>No projects yet</h2>
-      <Link to="/AllProjects">All Projects</Link>
+      <h2>No projects yet</h2>=
       <p>
         as you can see there are no projects only placeholders. This is on
         purpose after I finish my portfolio page this part of the portfolio will
@@ -12,28 +11,7 @@ const Projects = ({ name, description }) => {
         make me motivated and keep me going as the more projects there are the
         better this page is
       </p>
-      <div className="MainProjects">
-        <div className="project-1">
-          <h3>{name}</h3>
-          <h4>Date</h4>
-          <p>{description}</p>
-          {/* Image */}
-        </div>
-
-        <div className="project-2">
-          <h3>PlacerHolderTitle</h3>
-          <h4>Date</h4>
-          <p>Short Description</p>
-          {/* Image */}
-        </div>
-
-        <div className="project-3">
-          <h3>PlacerHolderTitle</h3>
-          <h4>Date</h4>
-          <p>Short Description</p>
-          {/* Image */}
-        </div>
-      </div>
+      <div className="MainProjects">{/* <ProjectItem></ProjectItem> */}</div>
     </div>
   );
 };

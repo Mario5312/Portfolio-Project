@@ -6,21 +6,19 @@ import Projects from "./components/Projects";
 import Contact from "./components/Contact";
 import { useEffect, useState } from "react";
 import ProjectItem from "./components/ProjectItem";
-// import GitHubData from "./data/gitHubData";
+
+import GitHubData from "./components/gitHubData";
 // import ProjectItem from "./components/ProjectItem";
 
 function App() {
-  useEffect(() => {
-    ProjectItem();
-    // GitHubData();
-  }, []);
+  const results = [];
 
-  // console.log(randomRepo);
   return (
     <div className="content">
       <Summary />
       <ProgramLang />
-      <Projects />
+      <Projects></Projects>
+      <GitHubData></GitHubData>
       <Contact />
     </div>
   );
