@@ -16,7 +16,7 @@ const ProjectItem = (props) => {
     ) : (
       <div className="project">No Repos found</div>
     );
-
+  // this makes it contiune forever untill all of them are logged
   return <>{listRepos}</>;
 };
 

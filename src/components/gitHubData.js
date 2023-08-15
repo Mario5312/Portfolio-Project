@@ -13,13 +13,21 @@ function GitHubData() {
       .then((res) => res.json())
       .then((data) => {
         // console.log(data);
-        for (let i = 0; i < 1; i++) {
-          const test = data[Math.floor(Math.random() * data.length)];
-          results.push(test);
-          // console.log(results);
+        // console.log(data);
+
+        const arrayClone = data.slice();
+
+        for (let i = 1; i <= 3; i++) {
+          const arr = arrayClone[Math.floor(Math.random() * arrayClone.length)];
+
+          let index = arrayClone.indexOf(arr);
+
+          arrayClone.splice(index, 1);
+
+          results.push(arr);
         }
         setRandomRepo(results);
-
+        // this isn't fully random
         // it actually works dont touch!!!!!!!!!!!!
       });
   }, []);
