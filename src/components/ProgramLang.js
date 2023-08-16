@@ -11,10 +11,20 @@ const ProgramLang = () => {
       </div>
       <div className="Lang-2">
         <h2>CSS</h2>
+        <img
+          src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/css3/css3-original.svg"
+          alt="CSS icon"
+        />
         <p>high proficiency </p>
       </div>
       <div className="Lang-3">
         <h2>JavaScript</h2>
+
+        <img
+          src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/javascript/javascript-original.svg"
+          alt="JavaScript icon"
+        />
+
         <p>Normal efficiency</p>
       </div>
     </div>
