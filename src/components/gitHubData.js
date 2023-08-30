@@ -27,10 +27,17 @@ function GitHubData() {
           results.push(arr);
         }
         setRandomRepo(results);
+
         // this isn't fully random
         // it actually works dont touch!!!!!!!!!!!!
       });
   }, []);
+  // fetch(
+  //   "https://raw.githubusercontent.com/Mario5312/Portfolio-Project/main/Portfolio Thumbnail.jpg"
+  // ).then((data) => {
+  //   <img>{data.url}</img>;
+  //   console.log(data.url);
+  // });
 
   return (
     <div className="content">

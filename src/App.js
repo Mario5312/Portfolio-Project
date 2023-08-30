@@ -8,6 +8,7 @@ import { useEffect, useState } from "react";
 import ProjectItem from "./components/ProjectItem";
 
 import GitHubData from "./components/gitHubData";
+
 // import ProjectItem from "./components/ProjectItem";
 
 function App() {

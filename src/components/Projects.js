@@ -3,7 +3,7 @@ import ProjectItem from "./ProjectItem";
 const Projects = ({ name, description }) => {
   return (
     <div className="Top">
-      <h2>No projects yet</h2>=
+      <h2>Projects</h2>=
       <p>
         as you can see there are no projects only placeholders. This is on
         purpose after I finish my portfolio page this part of the portfolio will

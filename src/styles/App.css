@@ -4,21 +4,45 @@
 
 .content {
   text-align: center;
-  margin-left: 25px;
+}
+
+.info {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+}
+
+.aboutMe {
+  font-size: 15px;
+  font-weight: bold;
+  text-align: center;
+  /* width: 500px; */
+
+  /* padding: 22px 122px 10px 122px; */
 }
 
 .lang {
   display: grid;
-  grid-template-columns: 1fr 1fr 1fr;
+  grid-template-columns: 1fr 1fr 1fr 1fr;
 }
 
-.MainProjects {
+.Projects {
   display: flex;
   flex-direction: row;
-  margin-left: auto;
-  margin: auto;
+  /* margin-left: auto; */
+  /* margin: auto; */
 
-  justify-content: space-between;
+  /* justify-content: space-between; */
+  gap: 10px;
+  /* border: 1px solid black; */
+  /* padding: 10px 15px 10px 11px; */
+  margin-right: 22px;
+  margin-left: 22px;
+}
 
-  padding: 10px;
+.Projects .project {
+  width: 350px;
+  height: 255px;
+  border: 2px solid black;
+  border-radius: 7px;
 }
