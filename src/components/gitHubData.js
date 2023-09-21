@@ -17,7 +17,7 @@ function GitHubData() {
 
         const arrayClone = data.slice();
 
-        for (let i = 1; i <= 2; i++) {
+        for (let i = 1; i <= 1; i++) {
           const arr = arrayClone[Math.floor(Math.random() * arrayClone.length)];
 
           let index = arrayClone.indexOf(arr);

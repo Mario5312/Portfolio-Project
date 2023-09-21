@@ -8,6 +8,7 @@ import { useEffect, useState } from "react";
 import ProjectItem from "./components/ProjectItem";
 
 import GitHubData from "./components/gitHubData";
+import ImageComponent from "./components/testing";
 
 // import ProjectItem from "./components/ProjectItem";
 
@@ -20,6 +21,7 @@ function App() {
       <ProgramLang />
       <Projects></Projects>
       <GitHubData></GitHubData>
+      <ImageComponent></ImageComponent>
       <Contact />
     </div>
   );
