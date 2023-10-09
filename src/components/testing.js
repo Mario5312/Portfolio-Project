@@ -1,14 +1,25 @@
 import React, { useState, useEffect } from "react";
+import ProjectItem from "./ProjectItem";
+const githubToken = process.env.REACT_APP_APIKEY;
 
 const ImageComponent = () => {
+  // const [randomRepo, setRandomRepo] = useState([]);
   const [imageData, setImageData] = useState(null);
-  const username = "Mario5312";
-  const githubToken = "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";
-  // const topic = "thumbnails";
-  // const perPage = 2;
+  // const [imageUrl, setImageUrl] = useState([]);
+  const [repoProp, setRepoProp] = useState([]);
+
+  const randomRepositories = [];
+  useEffect(() => {
+    fetchImage();
+  }, []);
+  const results = [];
 
   const fetchImage = async () => {
     try {
+      // const fetchedImages = [];
+      // let attempts = 0;
+
+      // while (fetchedImages.length < count && attempts < maxAttempts) {
       const response = await fetch(
         `https://api.github.com/users/Mario5312/repos`,
         {
@@ -17,69 +28,51 @@ const ImageComponent = () => {
           },
         }
       );
-      console.log(response);
 
-      if (response.status === 200) {
-        const repositories = response.url;
-        // console.log(repositories);
+      if (response.ok) {
+        const repositories = await response.json();
+        if (repositories.length >= 2) {
+          const randomRepoIndices = [];
 
-        if (repositories.length > 0) {
-          const randomRepository =
-            repositories[Math.floor(Math.random() * repositories.length)];
-
-          const contentResponse = await fetch(
-            `https://api.github.com/repos/Mario5312/${randomRepository.name}/Contents`,
-            {
-              headers: {
-                Authorization: `Bearer ${githubToken}`,
-              },
+          // Generate two distinct random indices
+          while (randomRepoIndices.length < 2) {
+            const randomIndex = Math.floor(Math.random() * repositories.length);
+            // const contentResponse = `https://Mario5312.github.io/${randomIndex.name}/Contents/Thumbnail.JPG`;
+            // setImageData(contentResponse);
+            if (!randomRepoIndices.includes(randomIndex)) {
+              randomRepoIndices.push(randomIndex);
             }
-          );
-          if (contentResponse.status === 200) {
-            const imageFiles = contentResponse.data.filter((item) =>
-              /\.(jpg|jpeg|png|gif)$/i.test(item.name)
-            );
-
-            const imageResponse = await fetch(imageFiles.download_url, {
-              responseType: "blob",
-            });
-
-            if (imageResponse.status === 200) {
-              const url = URL.createObjectURL(new Blob([imageResponse.data]));
-              console.log(url);
-              setImageData(url);
-            } else {
-              console.error("Failed to fetch image");
-            }
-          } else {
-            console.error("No image files found in the repository");
           }
-        } else {
-          console.error("Failed to fetch public repositories");
+
+          // Extract the random repositories based on the random indices
+          const randomReposData = randomRepoIndices.map(
+            (index) => repositories[index]
+          );
+
+          // Update the state with the random repositories
+          setRepoProp(randomReposData);
         }
       }
+
+      // attempts += 1;
+      // }
+      // setImageUrls(fetchedImages);
+      // console.log(imageUrls);
     } catch (error) {
       console.error("Error fetching image:", error);
     }
   };
-
-  // Figure out where to put it
-
-  // Raw images
-
-  // URL_TO_IMAGE_3
-
-  // const App = () => {
-  //   const imageUrls = [
-  //     'URL_TO_IMAGE_1',
-  //     'URL_TO_IMAGE_2',
-  //     'URL_TO_IMAGE_3'
-  //   ];
   return (
     <div>
-      <h1>GitHub Image Fetching</h1>
-      <button onClick={fetchImage}>Fetch Random Image</button>
-      {imageData && <img src={imageData} alt="GitHub Repository Image" />}
+      {/* <h2>{randomRepo}</h2>
+      {imageData && (
+        <img
+          src={imageData}
+          className="RepoImage"
+          alt="GitHub Repository Image"
+        />
+      )} */}
+      <ProjectItem repoProp={repoProp} imageData={imageData}></ProjectItem>
     </div>
   );
 };

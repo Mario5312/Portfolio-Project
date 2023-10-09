@@ -41,8 +41,16 @@
 }
 
 .Projects .project {
-  width: 350px;
-  height: 255px;
+  width: 275px;
+  height: 365px;
   border: 2px solid black;
-  border-radius: 7px;
+  /* border-radius: 7px; */
+}
+
+.RepoImage {
+  /* border-radius: 7px; */
+  border: 2px solid rgba(0, 0, 0, 0.185);
+  margin-right: 10px;
+  width: 270px;
+  height: 300px;
 }

@@ -5,8 +5,8 @@ import ImageComponent from "./testing";
 const ProjectItem = (props) => {
   // const [imageData, setImageData] = useState("");
 
-  const { randomRepo } = props;
-  // console.log(randomRepo);
+  const { repoProp, imageData } = props;
+  // console.log(repoProp);
   // const fetchImage = (itemName) => {
   //   try {
   //     const response = fetch(
@@ -26,13 +26,19 @@ const ProjectItem = (props) => {
   // };
 
   const listRepos =
-    randomRepo.length !== 0 ? (
-      randomRepo.map((item) => (
+    repoProp.length !== 0 ? (
+      repoProp.map((item) => (
         <div key={item.id} className="project">
           <h3>{item.name}</h3>
+          <img
+            src={`https://Mario5312.github.io/${item.name}/Contents/Thumbnail.JPG`}
+            className="RepoImage"
+            alt="GitHub Repository Image"
+          />
+          {/* <ImageComponent></ImageComponent> */}
           {/* {fetchImage(item.name)} */}
           {/* <img>{imageData}</img> */}
-          <p>{item.description}</p>
+          {/* <p>{item.description}</p> */}
         </div>
       ))
     ) : (
